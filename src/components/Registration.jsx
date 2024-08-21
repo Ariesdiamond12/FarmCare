@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import Farm from "../assets/farm.png";
 import { useLocation } from "react-router-dom";
 
-function Login() {
+function Registration() {
   const d = new Date();
   let year = d.getFullYear();
 
   const location = useLocation();
   function disable_scrolling() {
     let body = document.body;
-    if (location.pathname == "/login") {
+    if (location.pathname == "/registration") {
       body.style.overflow = "hidden";
     }
   }
@@ -25,13 +25,18 @@ function Login() {
         <div className="flex flex-col justify-center">
           <form className="max-w-[400px] w-full mx-auto p-4">
             <h1 className="text-3xl font-normal text-center">
-              Login to your Account
+              Create an Account
             </h1>
-            <h3 className="text-l font-normal text-center my-2">
-              Welcome back! Enter your credentials
-            </h3>
             <div className="flex flex-col py-2">
-              <label>Username</label>
+              <label>Name</label>
+              <input className="border p-2 rounded-lg" type="text" />
+            </div>
+            <div className="flex flex-col py-2">
+              <label>Surname</label>
+              <input className="border p-2 rounded-lg" type="text" />
+            </div>
+            <div className="flex flex-col py-2">
+              <label>Email Address</label>
               <input className="border p-2 rounded-lg" type="text" />
             </div>
             <div className="flex flex-col py-2">
@@ -39,13 +44,13 @@ function Login() {
               <input className="border p-2 rounded-lg" type="password" />
             </div>
             <button className=" w-full my-5 py-2 rounded-lg bg-[#a6c48a] shadow-lg shadow-[#a6c48a] text-white">
-              Sign In
+              Create Account
             </button>
             <div>
               <p>
-                Don't have an account yet?{" "}
-                <a className="text-[#a6c48a]" href="./Registration">
-                  Sign up
+                Already have an account yet?{" "}
+                <a className="text-[#a6c48a]" href="./Login">
+                  Sign in
                 </a>
               </p>
             </div>
@@ -78,4 +83,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Registration;
