@@ -1,49 +1,92 @@
-import React, { useEffect } from "react";
-import Farm from "../assets/farm.png";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Field from "../assets/field.jpg";
 
 function Registration() {
-  const d = new Date();
-  let year = d.getFullYear();
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  // const [getData, setGetData] = ();
 
-  const location = useLocation();
-  function disable_scrolling() {
-    let body = document.body;
-    if (location.pathname == "/registration") {
-      body.style.overflow = "hidden";
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      // Simulate API call to register user
+      const response = await fetch("http://localhost:3000/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, surname, email, password }),
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        // Store user data in local storage
+        localStorage.setItem("userData", JSON.stringify(userData));
+        navigate("/login");
+      } else {
+        setError("Error registering user");
+      }
+    } catch (error) {
+      setError("Error registering user");
     }
-  }
-
-  useEffect(() => {
-    disable_scrolling();
-  }, []);
+  };
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden">
-        {/* Left Column */}
-        <div className="flex flex-col justify-center">
-          <form className="max-w-[400px] w-full mx-auto p-4">
-            <h1 className="text-3xl font-normal text-center">
-              Create an Account
-            </h1>
+      <div
+        className="h-screen w-full bg-cover bg-zinc-900/90 mix-blend-overlay bg-no-repeat relative bg-center object-fit-contain"
+        style={{ backgroundImage: `url(${Field})` }}
+      >
+        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
+        <div className="flex justify-center items-center h-full relative z-10">
+          <form className="max-w-[400px] w-full rounded-md mx-auto bg-white p-8 mx-5">
+            <h2 className="text-4xl font-semibold text-center py-8">
+              Get Started
+            </h2>
             <div className="flex flex-col py-2">
               <label>Name</label>
-              <input className="border p-2 rounded-lg" type="text" />
+              <input
+                className="border p-2 rounded-lg"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="flex flex-col py-2">
               <label>Surname</label>
-              <input className="border p-2 rounded-lg" type="text" />
+              <input
+                className="border p-2 rounded-lg"
+                type="text"
+                value={surname}
+                onChange={(e) => setSurname(e.target.value)}
+              />
             </div>
             <div className="flex flex-col py-2">
               <label>Email Address</label>
-              <input className="border p-2 rounded-lg" type="text" />
+              <input
+                className="border p-2 rounded-lg"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="flex flex-col py-2">
               <label>Password</label>
-              <input className="border p-2 rounded-lg" type="password" />
+              <input
+                className="border p-2 rounded-lg"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
-            <button className=" w-full my-5 py-2 rounded-lg bg-[#a6c48a] shadow-lg shadow-[#a6c48a] text-white">
+            {error && <div className="text-red-500">{error}</div>}
+            <button
+              className="w-full my-4 py-4 rounded-full bg-[#a6c48a] shadow-lg shadow-[#a6c48a] text-white"
+              onClick={handleRegister}
+            >
               Create Account
             </button>
             <div>
@@ -55,28 +98,6 @@ function Registration() {
               </p>
             </div>
           </form>
-        </div>
-
-        {/* Right Column */}
-        <div
-          className="hidden sm:block mx-3 my-2 rounded-xl"
-          style={{
-            backgroundImage: `url(${Farm})`,
-            backgroundSize: "cover",
-          }}
-        >
-          <p className="text-[3rem] text-white text-center mt-[85dvh]">
-            Let's end hunger together
-          </p>
-        </div>
-      </div>
-      <div
-        className="flex justify-start"
-        style={{ transform: "translateY(-5dvh)" }}
-      >
-        <div className="flex justify-between font-light text-gray-500 w-[40dvw] ms-10">
-          <p>©{year}, zerohunger</p>
-          <p>Terms of use</p>
         </div>
       </div>
     </>
