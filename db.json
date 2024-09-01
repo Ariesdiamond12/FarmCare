@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "id": "20c4",
+      "name": "tumi",
+      "surname": "marokane",
+      "email": "tumi@marokane.com",
+      "password": "12345"
+    },
+    {
+      "id": "844a",
+      "username": "tumi@marokane.com",
+      "password": "12345"
+    },
+    {
+      "id": "c469",
+      "username": "tumi@marokane.com",
+      "password": "12345"
+    },
+    {
+      "id": "e552",
+      "username": "tumi@marokane.com",
+      "password": "12345"
+    },
+    {
+      "id": "95b5",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "d9b8",
+      "username": "tumi@marokane.com",
+      "password": "12345"
+    },
+    {
+      "id": "6cc1",
+      "name": "zethu",
+      "surname": "hamilton",
+      "email": "zethu@hamilton.com",
+      "password": "aaaaa"
+    },
+    {
+      "id": "97b3",
+      "username": "zethu@hamilton.com",
+      "password": "aaaa"
+    },
+    {
+      "id": "98a5",
+      "username": "",
+      "password": ""
+    },
+    {
+      "id": "53b7",
+      "name": "",
+      "surname": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "bf37",
+      "username": "",
+      "password": ""
+    }
+  ]
+}

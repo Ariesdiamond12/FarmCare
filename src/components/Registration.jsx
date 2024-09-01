@@ -9,13 +9,12 @@ function Registration() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  // const [getData, setGetData] = ();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
       // Simulate API call to register user
-      const response = await fetch("http://localhost:3000/user", {
+      const response = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, surname, email, password }),
