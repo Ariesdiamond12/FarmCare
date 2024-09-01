@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 import NavbarImage from "../assets/navbar.png";
 import WheatImage from "../assets/wheat.png";
 import CattleImage from "../assets/cows.png";
@@ -15,6 +16,16 @@ function Home() {
   const handleNav = () => {
     setNav(!nav);
     setLogo(!logo);
+  };
+
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate("/farmers");
+  };
+
+  const handleDonateClick = () => {
+    navigate("/donate");
   };
 
   return (
@@ -34,15 +45,14 @@ function Home() {
             <li>
               <a href="#"></a>Home
             </li>
-            <li>
-              <a href="#"></a>About
-            </li>
-            <li>
-              <a href="#"></a>Services
-            </li>
           </ul>
           <div className="hidden md:flex">
-            <button className="w-20 h-10 rounded-lg mr-10">Donate</button>
+            <button
+              className="w-20 h-10 rounded-lg mr-10"
+              onClick={handleDonateClick}
+            >
+              Donate
+            </button>
           </div>
 
           {/* Hamburger menu/ mobile view */}
@@ -71,10 +81,41 @@ function Home() {
 
       {/* Content Section */}
       <>
+        {/* First Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden">
+          {/* <h1 className="items-center text-center">Challenges</h1> */}
+          {/* Left Column */}
+          <div
+            className="hidden sm:block mx-3 my-2 rounded-xl size-65"
+            style={{
+              backgroundImage: `url(https://humanglemedia.com/wp-content/uploads/2022/04/image-2.png)`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          ></div>
+
+          {/* Right Column */}
+          <div className="flex flex-col justify-center ml-9">
+            <h1>Impact Of Malnutrition</h1>
+            <p>
+              Exploring how malnutrition affects physical growth, cognitive
+              development, and overall health of children.
+            </p>
+
+            <a
+              href="https://www.who.int/news-room/fact-sheets/detail/malnutrition?gad_source=1&gclid=Cj0KCQjw_sq2BhCUARIsAIVqmQszCKiQ-Hug8arfrWVYxF3OQVNd4FZNVsySO320ixaOxHnSk8DX2xcaAv0HEALw_wcB#"
+              className="hover:underline font-bold"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        {/* Second Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden">
           {/* Left Column */}
           <div className="flex flex-col justify-center ml-9">
-            <h2>Our Vision</h2>
             <h1>Eradicate Food Insecurity</h1>
             <p>
               Achieving a hunger-free world through sustainable agriculture,
@@ -84,7 +125,7 @@ function Home() {
 
             <a
               href="https://www.worldbank.org/en/topic/agriculture/brief/food-security-update/what-is-food-security"
-              className="hover:underline"
+              className="hover:underline font-bold"
             >
               Learn More
             </a>
@@ -101,6 +142,7 @@ function Home() {
             }}
           ></div>
         </div>
+
         <div
           className="flex justify-start"
           style={{ transform: "translateY(-5dvh)" }}
@@ -113,15 +155,20 @@ function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
-                className="w-full h-40 object-cover"
-                src={CattleImage}
-                alt="Card 1 Image"
-              />
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-medium">Livestock Farmers</h3>
-              </div>
+            <div
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+              onClick={handleCardClick}
+            >
+              <a href="/farmers">
+                <img
+                  className="w-full h-40 object-cover"
+                  src={CattleImage}
+                  alt="Card 1 Image"
+                />
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-medium">Livestock Farmers</h3>
+                </div>
+              </a>
             </div>
 
             {/* Card 2 */}
@@ -187,11 +234,6 @@ function Home() {
                   <li>
                     <a href="#" className="hover:underline">
                       Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Services
                     </a>
                   </li>
                   <li>

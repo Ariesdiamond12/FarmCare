@@ -60,6 +60,19 @@
       "id": "bf37",
       "username": "",
       "password": ""
+    },
+    {
+      "id": "8dfd",
+      "name": "kat",
+      "surname": "me",
+      "email": "kat@me.com",
+      "password": "123456"
+    },
+    {
+      "id": "00c3",
+      "username": "kat@me.com",
+      "password": "123456"
     }
-  ]
+  ],
+  "Donations": []
 }
