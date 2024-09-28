@@ -1,77 +1,19 @@
 {
   "users": [
     {
-      "id": "20c4",
-      "name": "tumi",
-      "surname": "marokane",
-      "email": "tumi@marokane.com",
-      "password": "12345"
+      "id": "3842"
     },
     {
-      "id": "844a",
-      "username": "tumi@marokane.com",
-      "password": "12345"
-    },
-    {
-      "id": "c469",
-      "username": "tumi@marokane.com",
-      "password": "12345"
-    },
-    {
-      "id": "e552",
-      "username": "tumi@marokane.com",
-      "password": "12345"
-    },
-    {
-      "id": "95b5",
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "d9b8",
-      "username": "tumi@marokane.com",
-      "password": "12345"
-    },
-    {
-      "id": "6cc1",
-      "name": "zethu",
-      "surname": "hamilton",
-      "email": "zethu@hamilton.com",
-      "password": "aaaaa"
-    },
-    {
-      "id": "97b3",
-      "username": "zethu@hamilton.com",
-      "password": "aaaa"
-    },
-    {
-      "id": "98a5",
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "53b7",
+      "id": "ee3e",
       "name": "",
       "surname": "",
-      "email": "",
-      "password": ""
+      "email": "preciousmarokane@icloud.com",
+      "password": "@Precious2001"
     },
     {
-      "id": "bf37",
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "8dfd",
-      "name": "kat",
-      "surname": "me",
-      "email": "kat@me.com",
-      "password": "123456"
-    },
-    {
-      "id": "00c3",
-      "username": "kat@me.com",
-      "password": "123456"
+      "id": "1a35",
+      "username": "preciousmarokane@icloud.com",
+      "password": "@Precious2001"
     }
   ],
   "Donations": []

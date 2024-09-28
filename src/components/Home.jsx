@@ -4,6 +4,7 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import NavbarImage from "../assets/navbar.png";
 import WheatImage from "../assets/wheat.png";
+import Hunger from "../assets/malnutrition.png";
 import CattleImage from "../assets/cows.png";
 import FarmingImage from "../assets/farming.png";
 import Plant from "../assets/planting.png";
@@ -81,22 +82,27 @@ function Home() {
 
       {/* Content Section */}
       <>
+        <div className="text-center mt-20">
+          <h1 className="font-semibold text-2xl">
+            Feeding Futures: Ending Malnutrition and Food Insecurity
+          </h1>
+          <p className="mt-2 text-gray-600">
+            Addressing the impacts of malnutrition and food insecurity through
+            sustainable agricultural solutions and community empowerment.
+          </p>
+        </div>
         {/* First Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden">
-          {/* <h1 className="items-center text-center">Challenges</h1> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden gap-6 mb-0">
           {/* Left Column */}
-          <div
-            className="hidden sm:block mx-3 my-2 rounded-xl size-65"
-            style={{
-              backgroundImage: `url(https://humanglemedia.com/wp-content/uploads/2022/04/image-2.png)`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-          ></div>
-
+          <div className="flex justify-center items-center px-4">
+            <img
+              src={Hunger}
+              alt="Child affected by hunger"
+              className="rounded-xl object-cover shadow-xl max-w-[630px] h-auto"
+            />
+          </div>
           {/* Right Column */}
-          <div className="flex flex-col justify-center ml-9">
+          <div className="flex flex-col justify-center mr-24 space-y-4">
             <h1>Impact Of Malnutrition</h1>
             <p>
               Exploring how malnutrition affects physical growth, cognitive
@@ -113,9 +119,9 @@ function Home() {
         </div>
 
         {/* Second Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden gap-6">
           {/* Left Column */}
-          <div className="flex flex-col justify-center ml-9">
+          <div className="flex flex-col justify-center ml-24 space-y-4">
             <h1>Eradicate Food Insecurity</h1>
             <p>
               Achieving a hunger-free world through sustainable agriculture,
@@ -132,15 +138,13 @@ function Home() {
           </div>
 
           {/* Right Column */}
-          <div
-            className="hidden sm:block mx-3 my-2 rounded-xl size-65"
-            style={{
-              backgroundImage: `url(${WheatImage})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-          ></div>
+          <div className="flex justify-center items-center px-4">
+            <img
+              src={WheatImage}
+              alt="Wheat"
+              className="rounded-xl object-cover shadow-xl max-w-[630px] h-auto"
+            />
+          </div>
         </div>
 
         <div
