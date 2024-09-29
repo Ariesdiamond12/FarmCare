@@ -215,13 +215,13 @@ function Home() {
 
         {/* Footer */}
         <footer
-          className="bg-cover bg-center text-white pt-12"
+          className="bg-cover bg-center text-white pt-12 "
           style={{
             backgroundImage: `url(${FooterImage})`,
           }}
         >
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
               {/* Column 1 */}
               <div>
                 <h3 className="text-lg font-bold mb-4">About Us</h3>
@@ -265,7 +265,7 @@ function Home() {
             </div>
 
             {/* Footer Bottom */}
-            <div className="mt-8 border-t border-white pt-4 text-center">
+            <div className="mt-8 pt-4 text-center">
               <p className="text-sm">
                 &copy; 2024 Binary Brains. All rights reserved.
               </p>

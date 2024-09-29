@@ -6,17 +6,17 @@ const FarmersPage = () => {
       name: "John Doe",
       description:
         "Experienced cattle farmer with over 10 years in the industry.",
-      URL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqPKc8RamLD1Km3mufQjH1_LLFWRU05clnWw&s",
+      URL: "https://cdn.pixabay.com/photo/2021/04/25/14/30/man-6206540_1280.jpg",
     },
     {
       name: "Jane Smith",
       description: "Specializes in sheep farming and organic wool production.",
-      URL: "https://previews.123rf.com/images/schwingkopf/schwingkopf1101/schwingkopf110100002/8808902-modern-middle-aged-blonde-female-portrait-on-white.jpg",
+      URL: "https://cdn.pixabay.com/photo/2015/06/04/12/05/woman-797394_1280.jpg",
     },
     {
       name: "Michael Johnson",
       description: "Raising free-range chickens and selling organic eggs.",
-      URL: "https://i.pinimg.com/736x/4d/3f/68/4d3f68afd3261287d92c1ee794f947c2.jpg",
+      URL: "https://cdn.pixabay.com/photo/2024/03/07/11/35/person-8618424_1280.png",
     },
     // Add more farmers as needed
   ];
@@ -32,8 +32,9 @@ const FarmersPage = () => {
           >
             <img
               className="w-full h-48 object-cover"
-              src={farmer.image}
+              src={farmer.URL}
               alt={`Livestock of ${farmer.name}`}
+              style={{ maxHeight: "150px" }}
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{farmer.name}</h2>

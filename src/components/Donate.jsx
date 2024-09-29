@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import axios for HTTP requests
-import Flower from "../assets/lotus.jpg";
+import Produce from "../assets/Produce.jpeg";
+import { Input } from "@nextui-org/react";
 
 function Donate() {
   const [showMessage, setShowMessage] = useState(false);
@@ -65,26 +66,53 @@ function Donate() {
   };
 
   return (
-    <div
-      className="h-screen w-full bg-cover bg-zinc-900/90 mix-blend-overlay bg-no-repeat relative bg-center"
-      style={{ backgroundImage: `url(${Flower})` }}
-    >
-      {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
-
-      {/* Form Container */}
-      <div className="flex justify-center items-center h-full relative z-10">
-        <form
-          className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md space-y-6"
-          onSubmit={handleSubmit}
-        >
-          <h2 className="text-2xl font-bold text-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full overflow-hidden">
+      {/* Left Column */}
+      <div className="flex flex-col justify-center ml-5">
+        <form>
+          <h2 className="text-2xl font-bold text-center mb-6">
             Donate Your Produce
           </h2>
+          <div className="flex flex-col mb-4">
+            {/* Personal Details */}
+            <div className="flex gap-4 w-full">
+              <div className="flex-1">
+                <label
+                  htmlFor="name"
+                  className="text-lg font-medium mb-2 block"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your Name"
+                  className="p-3 w-full border border-gray-300 rounded-lg"
+                />
+              </div>
 
-          {/* Produce Type Input */}
-          <div className="flex flex-col">
-            <label htmlFor="produceType" className="text-lg font-medium">
+              <div className="flex-1">
+                <label
+                  htmlFor="surname"
+                  className="text-lg font-medium mb-2 block"
+                >
+                  Surname
+                </label>
+                <input
+                  type="text"
+                  id="surname"
+                  name="surname"
+                  placeholder="Enter your Surname"
+                  className="p-3 w-full border border-gray-300 rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col mb-4">
+            {/* Produce Type */}
+            <label htmlFor="produceType" className="text-lg font-medium mb-2">
               Type of Produce
             </label>
             <input
@@ -94,13 +122,13 @@ function Donate() {
               value={formData.produceType}
               onChange={handleChange}
               placeholder="Enter type of produce (e.g., Wheat, Vegetables)"
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="p-3 w-4/5 border border-gray-300 rounded-lg"
             />
           </div>
 
           {/* Quantity Input */}
-          <div className="flex flex-col">
-            <label htmlFor="quantity" className="text-lg font-medium">
+          <div className="flex flex-col mb-4">
+            <label htmlFor="quantity" className="text-lg font-medium mb-2">
               Quantity (kg)
             </label>
             <input
@@ -110,13 +138,13 @@ function Donate() {
               value={formData.quantity}
               onChange={handleChange}
               placeholder="Enter quantity in kilograms"
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="p-3 w-4/5 border border-gray-300 rounded-lg"
             />
           </div>
 
           {/* Additional Notes */}
-          <div className="flex flex-col">
-            <label htmlFor="notes" className="text-lg font-medium">
+          <div className="flex flex-col mb-4">
+            <label htmlFor="notes" className="text-lg font-medium mb-2">
               Additional Notes
             </label>
             <textarea
@@ -125,7 +153,7 @@ function Donate() {
               value={formData.notes}
               onChange={handleChange}
               placeholder="Any special instructions or information"
-              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="p-3 w-4/5 border border-gray-300 rounded-lg"
               rows="4"
             ></textarea>
           </div>
@@ -134,12 +162,27 @@ function Donate() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-[#a6c48a] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#a6c48a] transition-colors duration-300"
+              className="bg-[#008000] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#a6c48a] transition-colors duration-300"
             >
               Donate Produce
             </button>
           </div>
         </form>
+      </div>
+
+      {/* Right Column */}
+      <div
+        className="hidden sm:flex mx-3 my-2 rounded-xl items-center justify-center"
+        style={{
+          backgroundImage: `url(${Produce})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center", // Ensures the background is centered
+          height: "100%", // Ensures the div fills the entire height
+        }}
+      >
+        <p className="text-[3rem] text-white text-center bg-black/50 p-4 rounded-lg">
+          Make a difference in your community!
+        </p>
       </div>
 
       {/* Pop-Up Message */}
