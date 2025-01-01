@@ -117,7 +117,7 @@ function Login() {
         style={{ transform: "translateY(-5dvh)" }}
       >
         <div className="flex justify-between font-light text-gray-500 w-[40dvw] ms-10">
-          <p>©{year}, zerohunger</p>
+          <p>©{year}, farmcare</p>
           <p>Terms of use</p>
         </div>
       </div>
